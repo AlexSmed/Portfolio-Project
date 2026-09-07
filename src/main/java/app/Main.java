@@ -1,12 +1,9 @@
 package app;
 
-import app.persistence.Employee;
-import app.persistence.EmployeeDAO;
+
 import app.persistence.Products;
 import app.persistence.ProductsDAO;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -25,6 +22,9 @@ public class Main {
         Products foundProduct = productsDAO.findByName(createdproduct.getName());
         System.out.println("found Employee: " + foundProduct.getIngredients());
 
+        foundProduct.setPlu(1359);
+        Products updatedProducts = productsDAO.update(foundProduct);
+        System.out.println("Updated Unicorn Age: " + updatedProducts.getPlu());
 
         productsDAO.close();
 

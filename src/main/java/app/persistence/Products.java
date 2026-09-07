@@ -36,6 +36,9 @@ public class Products {
     @Column(name = "lastUse", length = 100)
     private String lastUse;
 
+    @Column(name = "plu")
+    private int plu;
+
     public Products(){
 
     }
@@ -113,5 +116,13 @@ public class Products {
 
     public String getLastUse() {
         return lastUse;
+    }
+
+    public int getPlu() {
+        return plu;
+    }
+
+    public void setPlu(int plu) {
+        this.plu = plu;
     }
 }
