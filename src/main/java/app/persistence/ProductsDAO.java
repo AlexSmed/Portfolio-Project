@@ -46,6 +46,16 @@ public class ProductsDAO {
         em.close();
     }
 
+    public Products update(Products products)
+    {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Products updatedProducts = em.merge(products);
+        em.getTransaction().commit();
+        em.close();
+        return updatedProducts;
+    }
+
     public void close()
     {
         emf.close();
