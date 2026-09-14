@@ -103,6 +103,7 @@
             <scope>test</scope>
         </dependency>
 
+
         <!--  Logging   -->
 
         <dependency>
@@ -115,6 +116,13 @@
             <artifactId>slf4j-api</artifactId>
             <version>${org.slf4j}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.genai</groupId>
+            <artifactId>google-genai</artifactId>
+            <version>1.71.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>
