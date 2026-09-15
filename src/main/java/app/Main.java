@@ -1,8 +1,6 @@
 package app;
 
 
-import app.persistence.Products;
-import app.persistence.ProductsDAO;
 import service.AllergyChecker;
 
 public class Main {

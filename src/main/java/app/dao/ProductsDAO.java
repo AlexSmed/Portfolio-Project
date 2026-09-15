@@ -1,6 +1,7 @@
-package app.persistence;
+package app.dao;
 
 import app.config.HibernateConfig;
+import app.entities.Products;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
