@@ -1,10 +1,10 @@
 package app.config;
 
 
-import app.persistence.Bulletin;
-import app.persistence.Employee;
-import app.persistence.Products;
-import app.persistence.Routines;
+import app.entities.Bulletin;
+import app.entities.Employee;
+import app.entities.Products;
+import app.entities.Routines;
 import org.hibernate.cfg.Configuration;
 
 final class EntityRegistry {

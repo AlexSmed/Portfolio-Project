@@ -1,49 +1,50 @@
-package app.persistence;
+package app.dao;
 
 import app.config.HibernateConfig;
+import app.entities.Employee;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
-public class BulletinDAO {
+public class EmployeeDAO {
 
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
 
-    public Bulletin save(Bulletin bulletin)
+    public Employee save(Employee employee)
     {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        em.persist(bulletin);
+        em.persist(employee);
         em.getTransaction().commit();
         em.close();
-        return bulletin;
+        return employee;
     }
 
-    public Bulletin findByTitle(String title)
+    public Employee findById(int id)
     {
         EntityManager em = emf.createEntityManager();
-        Bulletin foundBulletin = em.find(Bulletin.class, title);
+        Employee foundEmployee = em.find(Employee.class, id);
         em.close();
-        return foundBulletin;
+        return foundEmployee;
     }
 
-    public Bulletin update(Bulletin bulletin)
+    public Employee update(Employee employee)
     {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Bulletin updatedBulletin = em.merge(bulletin);
+        Employee updatedEmployee = em.merge(employee);
         em.getTransaction().commit();
         em.close();
-        return updatedBulletin;
+        return updatedEmployee;
     }
 
-    public void delete(String title)
+    public void delete(int id)
     {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        Bulletin bulletin = findByTitle(title);
-        if (bulletin != null)
+        Employee employee = findById(id);
+        if (employee != null)
         {
-            em.remove(bulletin);
+            em.remove(employee);
         }
         em.getTransaction().commit();
         em.close();
@@ -54,5 +55,4 @@ public class BulletinDAO {
         emf.close();
     }
 }
-
 
